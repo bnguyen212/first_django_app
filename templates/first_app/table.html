@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% extends 'first_app/index.html' %}
+{% load staticfiles %}
+{% block other_block %}
+  <h1>Table</h1>
+  {% if access_records %}
+  <table>
+    <thead>
+      <th>Site Name</th>
+      <th>Date Accessed</th>
+    </thead>
+    {% for acc in access_records %}
+    <tr>
+      <td>{{ acc.name }}</td>
+      <td>{{ acc.date }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% else %}
+  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates rem minus nisi, provident nesciunt fugit obcaecati delectus repellat magni labore eius ipsum accusantium molestias. Dolorem sint unde nemo voluptas assumenda.</p>
+  {% endif %}
+{% endblock %}

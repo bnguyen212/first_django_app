@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="{% static 'css/index.css' %}">
+  <title>Users</title>
+</head>
+<body>
+  <h1>Users</h1>
+  <ol>
+    {% for u in users %}
+    <li>
+      User Info
+      <ul>
+        <li>First Name: {{u.first_name}}</li>
+        <li>Last Name: {{u.last_name}}</li>
+        <li>Email: {{u.email}}</li>
+      </ul>
+    </li>
+    {% endfor %}
+  </ol>
+</body>
+</html>

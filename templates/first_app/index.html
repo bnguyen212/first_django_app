@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+{% extends 'first_app/base.html' %}
+{% load staticfiles %}
+  {% block body_block %}
+    <h1>Hello this is index.</h1>
+    {{insert_me}}
+    <img src='{% static "images/MS.png" %}' alt="">
+      {% block other_block %}
+      {% endblock %}
+  {% endblock %}
