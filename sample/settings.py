@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -28,7 +29,7 @@ SECRET_KEY = '@yt-!j%#!p+xau-pvsgf0ha5vwt#7h!&+otvj&yu0keanqoog='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', 'frozen-earth-29815.herokuapp.com']
 
 
 # Application definition
@@ -126,6 +127,7 @@ USE_L10N = True
 USE_TZ = True
 
 
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
@@ -144,3 +146,6 @@ MEDIA_URL = '/media/'
 # Login
 
 LOGIN_URL = '/first_app/user_login'
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
