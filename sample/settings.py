@@ -144,7 +144,3 @@ MEDIA_URL = '/media/'
 # Login
 
 LOGIN_URL = '/first_app/user_login'
-
-
-import django_heroku
-django_heroku.settings(locals())
