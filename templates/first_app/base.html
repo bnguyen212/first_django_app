@@ -24,16 +24,22 @@
         <li class="nav-item active">
           <a class="nav-link" href="{% url 'first_app:index'%}">Home <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
+        {% comment %} <li class="nav-item">
           <a class="nav-link" href="{% url 'first_app:form'%}">Form</a>
-        </li>
+        </li> {% endcomment %}
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Dropdown
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="{% url 'first_app:users'%}">Users</a>
-            <a class="dropdown-item" href="{% url 'first_app:table'%}">Table</a>
+            {% comment %} <a class="dropdown-item" href="{% url 'first_app:users'%}">Users</a>
+            <a class="dropdown-item" href="{% url 'first_app:table'%}">Table</a> {% endcomment %}
+            <a class="dropdown-item" href="{% url 'first_app:register'%}">Register</a>
+            {% if user.is_authenticated %}
+              <a class="dropdown-item" href="{% url 'first_app:logout'%}">Logout</a>
+            {% else %}
+              <a class="dropdown-item" href="{% url 'first_app:user_login'%}">Login</a>
+            {% endif %}
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="{% url 'admin:index'%}">Admin</a>
           </div>

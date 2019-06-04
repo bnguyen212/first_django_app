@@ -2,9 +2,13 @@
 {% extends 'first_app/base.html' %}
 {% load staticfiles %}
   {% block body_block %}
-    <h1>Hello this is index.</h1>
-    {{insert_me}}
+    <h1>Welcome to DJANGO</h1>
+    {% comment %} {{insert_me}} {% endcomment %}
     <img src='{% static "images/MS.png" %}' alt="">
       {% block other_block %}
       {% endblock %}
+
+    {% comment %} template filter {% endcomment %}
+      {{ text|cut:'e' }}
+      {{ num|add:-56 }}
   {% endblock %}
